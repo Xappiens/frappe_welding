@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include welding *.css
+recursive-include welding *.csv
+recursive-include welding *.html
+recursive-include welding *.ico
+recursive-include welding *.js
+recursive-include welding *.json
+recursive-include welding *.md
+recursive-include welding *.png
+recursive-include welding *.py
+recursive-include welding *.svg
+recursive-include welding *.txt
+recursive-exclude welding *.pyc

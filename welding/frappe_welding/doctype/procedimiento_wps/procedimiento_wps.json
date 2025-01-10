@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:codigo",
+ "creation": "2025-01-07 09:29:45.188121",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "codigo",
+  "tipo_de_producto",
+  "material_base",
+  "espesor_de_material_base",
+  "espesor_de_material_depositado",
+  "tipo_de_union",
+  "tratamiento_termico",
+  "modo_de_transferencia",
+  "gas_de_protecci\u00f3n",
+  "gas_de_respaldo",
+  "material_de_aporte",
+  "especificaciones_de_electrodo",
+  "especificaciones_de_hilo",
+  "tipo_proceso"
+ ],
+ "fields": [
+  {
+   "fieldname": "tipo_de_producto",
+   "fieldtype": "Link",
+   "label": "Tipo de producto",
+   "options": "Tipo de producto",
+   "reqd": 1
+  },
+  {
+   "fieldname": "material_base",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material base",
+   "options": "Material base"
+  },
+  {
+   "fieldname": "espesor_de_material_base",
+   "fieldtype": "Data",
+   "label": "Espesor de material base"
+  },
+  {
+   "fieldname": "espesor_de_material_depositado",
+   "fieldtype": "Data",
+   "label": "Espesor de material depositado"
+  },
+  {
+   "fieldname": "tipo_de_union",
+   "fieldtype": "Link",
+   "label": "Tipo de union",
+   "options": "Tipo de union",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tratamiento_termico",
+   "fieldtype": "Data",
+   "label": "Tratamiento termico"
+  },
+  {
+   "fieldname": "modo_de_transferencia",
+   "fieldtype": "Data",
+   "label": "Modo de transferencia"
+  },
+  {
+   "fieldname": "gas_de_protecci\u00f3n",
+   "fieldtype": "Data",
+   "label": "Gas de protecci\u00f3n"
+  },
+  {
+   "fieldname": "gas_de_respaldo",
+   "fieldtype": "Data",
+   "label": "Gas de respaldo"
+  },
+  {
+   "fieldname": "material_de_aporte",
+   "fieldtype": "Data",
+   "label": "Material de aporte"
+  },
+  {
+   "fieldname": "especificaciones_de_electrodo",
+   "fieldtype": "Data",
+   "label": "Especificaciones de Electrodo"
+  },
+  {
+   "fieldname": "especificaciones_de_hilo",
+   "fieldtype": "Data",
+   "label": "Especificaciones de hilo"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C\u00f3digo",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "tipo_proceso",
+   "fieldtype": "Link",
+   "label": "Tipo Proceso",
+   "options": "Tipo proceso"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-09 10:52:12.527604",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Procedimiento WPS",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

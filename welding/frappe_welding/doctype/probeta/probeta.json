@@ -1,0 +1,86 @@
+{
+ "_comments": "[]",
+ "_liked_by": "[]",
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-07 09:49:15.087644",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "identificador",
+  "nombre",
+  "tipo_de_probeta",
+  "material_base",
+  "espesor_de_material_base",
+  "dimensiones",
+  "notas_adicionales"
+ ],
+ "fields": [
+  {
+   "fieldname": "identificador",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Identificador",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre"
+  },
+  {
+   "fieldname": "tipo_de_probeta",
+   "fieldtype": "Select",
+   "label": "Tipo de probeta",
+   "options": "Chapa\nTubo"
+  },
+  {
+   "fieldname": "material_base",
+   "fieldtype": "Link",
+   "label": "Material base",
+   "options": "Material base"
+  },
+  {
+   "fieldname": "espesor_de_material_base",
+   "fieldtype": "Data",
+   "label": "Espesor de material base"
+  },
+  {
+   "fieldname": "dimensiones",
+   "fieldtype": "Data",
+   "label": "dimensiones"
+  },
+  {
+   "fieldname": "notas_adicionales",
+   "fieldtype": "Text",
+   "label": "Notas adicionales"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-09 10:21:45.742743",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Probeta",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

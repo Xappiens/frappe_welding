@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nombre",
+ "creation": "2025-01-07 09:31:59.695062",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nombre",
+  "tipo_de_proceso",
+  "tipo_de_producto",
+  "material_base",
+  "espesor_de_material_base",
+  "espesor_de_material_depositado",
+  "grado_de_mecanizacion",
+  "posiciones_de_soldadura",
+  "tipo_de_union",
+  "tipo_de_corriente",
+  "tratamiento_termico",
+  "modo_de_transferencia",
+  "gas_de_proteccion",
+  "gas_de_respaldo",
+  "material_de_aporte",
+  "especificaciones_de_electrodo",
+  "especificaciones_de_hilo"
+ ],
+ "fields": [
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre",
+   "reqd": 1,
+   "search_index": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "tipo_de_proceso",
+   "fieldtype": "Link",
+   "label": "Tipo de proceso",
+   "options": "Tipo proceso"
+  },
+  {
+   "fieldname": "tipo_de_producto",
+   "fieldtype": "Link",
+   "label": "Tipo de producto",
+   "options": "Tipo de producto"
+  },
+  {
+   "fieldname": "material_base",
+   "fieldtype": "Link",
+   "label": "Material base",
+   "options": "Material base"
+  },
+  {
+   "fieldname": "espesor_de_material_base",
+   "fieldtype": "Data",
+   "label": "Espesor de material base"
+  },
+  {
+   "fieldname": "espesor_de_material_depositado",
+   "fieldtype": "Data",
+   "label": "Espesor de material depositado"
+  },
+  {
+   "fieldname": "grado_de_mecanizacion",
+   "fieldtype": "Data",
+   "label": "Grado de mecanizacion"
+  },
+  {
+   "fieldname": "posiciones_de_soldadura",
+   "fieldtype": "Link",
+   "label": "posiciones de soldadura",
+   "options": "Posiciones de soldadura"
+  },
+  {
+   "fieldname": "tipo_de_union",
+   "fieldtype": "Link",
+   "label": "Tipo de union",
+   "options": "Tipo de union"
+  },
+  {
+   "fieldname": "tipo_de_corriente",
+   "fieldtype": "Data",
+   "label": "Tipo de corriente"
+  },
+  {
+   "fieldname": "tratamiento_termico",
+   "fieldtype": "Data",
+   "label": "Tratamiento termico"
+  },
+  {
+   "fieldname": "modo_de_transferencia",
+   "fieldtype": "Data",
+   "label": "Modo de transferencia"
+  },
+  {
+   "fieldname": "gas_de_proteccion",
+   "fieldtype": "Data",
+   "label": "Gas de proteccion"
+  },
+  {
+   "fieldname": "gas_de_respaldo",
+   "fieldtype": "Data",
+   "label": "Gas de respaldo"
+  },
+  {
+   "fieldname": "material_de_aporte",
+   "fieldtype": "Data",
+   "label": "Material de aporte"
+  },
+  {
+   "fieldname": "especificaciones_de_electrodo",
+   "fieldtype": "Data",
+   "label": "Especificaciones de electrodo"
+  },
+  {
+   "fieldname": "especificaciones_de_hilo",
+   "fieldtype": "Data",
+   "label": "Especificaciones de hilo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-09 10:58:50.011872",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Cualificacion WPQ",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

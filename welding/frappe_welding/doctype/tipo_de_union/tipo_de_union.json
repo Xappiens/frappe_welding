@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nombre",
+ "creation": "2025-01-07 15:29:35.073191",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nombre",
+  "configuracion",
+  "descripcion",
+  "notas_adiciales"
+ ],
+ "fields": [
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre",
+   "unique": 1
+  },
+  {
+   "fieldname": "configuracion",
+   "fieldtype": "Data",
+   "label": "Configuracion"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Data",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "notas_adiciales",
+   "fieldtype": "Data",
+   "label": "Notas adiciales"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-09 10:35:50.316591",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Tipo de union",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-07 09:22:13.034771",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "empleado",
+  "adjuntos",
+  "homologaciones",
+  "historial_de_capacitacion",
+  "historial_de_evaluaciones_y_desempe\u00f1o",
+  "ausencias_y_disponibilidad",
+  "proyectos"
+ ],
+ "fields": [
+  {
+   "fieldname": "empleado",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Empleado",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "adjuntos",
+   "fieldtype": "Table",
+   "label": "Adjuntos",
+   "options": "Adjuntar"
+  },
+  {
+   "fieldname": "homologaciones",
+   "fieldtype": "HTML",
+   "label": "Homologaciones"
+  },
+  {
+   "fieldname": "proyectos",
+   "fieldtype": "HTML",
+   "label": "Proyectos"
+  },
+  {
+   "fieldname": "historial_de_capacitacion",
+   "fieldtype": "HTML",
+   "label": "Historial de capacitacion"
+  },
+  {
+   "fieldname": "historial_de_evaluaciones_y_desempe\u00f1o",
+   "fieldtype": "HTML",
+   "label": "Historial de evaluaciones y desempe\u00f1o"
+  },
+  {
+   "fieldname": "ausencias_y_disponibilidad",
+   "fieldtype": "HTML",
+   "label": "Ausencias y disponibilidad"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-10 08:32:36.345161",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Soldador",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

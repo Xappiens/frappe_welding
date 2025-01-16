@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-14 11:34:03.498956",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "soldador",
+  "homologaci\u00f3n",
+  "fecha_y_hora_prueba",
+  "calificaci\u00f3n",
+  "fecha_validez",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "soldador",
+   "fieldtype": "Link",
+   "label": "Soldador",
+   "options": "Soldador"
+  },
+  {
+   "fieldname": "homologaci\u00f3n",
+   "fieldtype": "Link",
+   "label": "Homologaci\u00f3n",
+   "options": "Homologacion"
+  },
+  {
+   "fieldname": "fecha_y_hora_prueba",
+   "fieldtype": "Datetime",
+   "label": "Fecha y hora prueba"
+  },
+  {
+   "fieldname": "calificaci\u00f3n",
+   "fieldtype": "Select",
+   "label": "Calificaci\u00f3n",
+   "options": "\nApto\nNo apto"
+  },
+  {
+   "fieldname": "fecha_validez",
+   "fieldtype": "Date",
+   "label": "Fecha validez"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Soldador Homologacion",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-14 12:03:07.237346",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Homologar soldador",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "custom": 1,
+   "title": "Validado"
+  },
+  {
+   "color": "Yellow",
+   "custom": 1,
+   "title": "Borrador"
+  },
+  {
+   "color": "Red",
+   "custom": 1,
+   "title": "Cancelado"
+  },
+  {
+   "color": "Blue",
+   "custom": 1,
+   "title": "Procesando"
+  }
+ ]
+}

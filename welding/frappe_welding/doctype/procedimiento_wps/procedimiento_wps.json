@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:codigo",
  "creation": "2025-01-07 09:29:45.188121",
@@ -9,12 +10,14 @@
  "engine": "InnoDB",
  "field_order": [
   "codigo",
+  "norma",
   "tipo_de_producto",
   "material_base",
   "espesor_de_material_base",
   "espesor_de_material_depositado",
   "tipo_de_union",
   "tratamiento_termico",
+  "column_break_regvn",
   "modo_de_transferencia",
   "gas_de_protecci\u00f3n",
   "gas_de_respaldo",
@@ -28,8 +31,7 @@
    "fieldname": "tipo_de_producto",
    "fieldtype": "Link",
    "label": "Tipo de producto",
-   "options": "Tipo de producto",
-   "reqd": 1
+   "options": "Tipo de producto"
   },
   {
    "fieldname": "material_base",
@@ -41,19 +43,20 @@
   {
    "fieldname": "espesor_de_material_base",
    "fieldtype": "Data",
-   "label": "Espesor de material base"
+   "label": "Espesor de material base",
+   "options": "10\n12\n15\n26\n36\n14\n20\n4\n2\n3\n10\n6\n8\n25\n2,5\n27"
   },
   {
    "fieldname": "espesor_de_material_depositado",
    "fieldtype": "Data",
-   "label": "Espesor de material depositado"
+   "label": "Espesor de material depositado",
+   "options": "10\n12\n15\n26\n36\n14\n20\n4\n2\n3\n10\n6\n8\n25\n2,5\n27"
   },
   {
    "fieldname": "tipo_de_union",
    "fieldtype": "Link",
    "label": "Tipo de union",
-   "options": "Tipo de union",
-   "reqd": 1
+   "options": "Tipo de union"
   },
   {
    "fieldname": "tratamiento_termico",
@@ -103,11 +106,21 @@
    "fieldtype": "Link",
    "label": "Tipo Proceso",
    "options": "Tipo proceso"
+  },
+  {
+   "fieldname": "column_break_regvn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "norma",
+   "fieldtype": "Select",
+   "label": "Norma",
+   "options": "ASME IX\n15614-1\n15613-1\n15614-2"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 10:52:12.527604",
+ "modified": "2025-01-13 12:39:01.799404",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Procedimiento WPS",

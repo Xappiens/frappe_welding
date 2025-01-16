@@ -12,6 +12,7 @@
   {
    "fieldname": "procedimiento",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Procedimiento",
    "options": "Procedimiento WPS"
   }
@@ -19,7 +20,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-09 11:08:05.257236",
+ "modified": "2025-01-13 10:29:21.517153",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Procedimientos WPS Homologacion",

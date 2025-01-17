@@ -1,0 +1,89 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"e88ADOJ7WC\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Frappe Welding<br></b></span>\",\"col\":12}},{\"id\":\"_81GoQgQdo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologacion\",\"col\":3}},{\"id\":\"UUnCHQBnea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ensayo WPQR\",\"col\":3}},{\"id\":\"evsi3ah8X2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cualificaci\u00f3n WPQ\",\"col\":3}},{\"id\":\"pBimN8CoKP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedimiento WPS\",\"col\":3}},{\"id\":\"VFVzOhPc3W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Soldador\",\"col\":3}},{\"id\":\"lkeZiytKOW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologar soldador\",\"col\":3}},{\"id\":\"5aC4hdUL0R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Solicitar homologaci\u00f3n\",\"col\":3}}]",
+ "creation": "2025-01-14 08:16:02.898086",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "getting-started",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Frappe Welding",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lista soldadores",
+   "link_count": 0,
+   "link_to": "Soldador",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-01-17 11:24:06.171910",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Frappe Welding",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 21.1,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Ensayo WPQR",
+   "link_to": "Ensayo WPQR",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Homologacion",
+   "link_to": "Homologacion",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Soldador",
+   "link_to": "Soldador",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Homologar soldador",
+   "link_to": "Homologar soldador",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Cualificaci\u00f3n WPQ",
+   "link_to": "Cualificacion WPQ",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Procedimiento WPS",
+   "link_to": "Procedimiento WPS",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Frappe Welding"
+}

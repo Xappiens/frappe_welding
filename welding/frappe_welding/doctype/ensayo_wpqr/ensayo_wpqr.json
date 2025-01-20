@@ -27,7 +27,7 @@
    "fieldname": "tipo_de_proceso",
    "fieldtype": "Link",
    "label": "Tipo de proceso",
-   "options": "Tipo Proceso"
+   "options": "Tipo proceso"
   },
   {
    "fieldname": "material_base",
@@ -54,7 +54,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 10:21:46.121828",
+ "modified": "2025-01-20 06:21:09.862736",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Ensayo WPQR",

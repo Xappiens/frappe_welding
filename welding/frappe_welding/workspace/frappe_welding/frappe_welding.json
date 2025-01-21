@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"e88ADOJ7WC\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Frappe Welding<br></b></span>\",\"col\":12}},{\"id\":\"_81GoQgQdo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologacion\",\"col\":3}},{\"id\":\"UUnCHQBnea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ensayo WPQR\",\"col\":3}},{\"id\":\"evsi3ah8X2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cualificaci\u00f3n WPQ\",\"col\":3}},{\"id\":\"pBimN8CoKP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedimiento WPS\",\"col\":3}},{\"id\":\"VFVzOhPc3W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Soldador\",\"col\":3}},{\"id\":\"lkeZiytKOW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologar soldador\",\"col\":3}},{\"id\":\"5aC4hdUL0R\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Solicitar homologaci\u00f3n\",\"col\":3}}]",
+ "content": "[{\"id\":\"e88ADOJ7WC\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Frappe Welding<br></b></span>\",\"col\":12}},{\"id\":\"_81GoQgQdo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologacion\",\"col\":3}},{\"id\":\"VFVzOhPc3W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Soldador\",\"col\":3}},{\"id\":\"nuWX_avp09\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prueba Certificacion\",\"col\":3}},{\"id\":\"pBimN8CoKP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedimiento WPS\",\"col\":3}},{\"id\":\"evsi3ah8X2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cualificaci\u00f3n WPQ\",\"col\":3}},{\"id\":\"UUnCHQBnea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ensayo WPQR\",\"col\":3}},{\"id\":\"lkeZiytKOW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologar soldador\",\"col\":3}},{\"id\":\"osxHlgvC0C\",\"type\":\"header\",\"data\":{\"text\":\"<br>\",\"col\":12}},{\"id\":\"C0YL-KoVsh\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reporte<b></b></span>\",\"col\":12}},{\"id\":\"JjTwZCksJR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Certificaci\u00f3N De Soldador\",\"col\":3}}]",
  "creation": "2025-01-14 08:16:02.898086",
  "custom_blocks": [],
  "docstatus": 0,
@@ -23,7 +23,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-01-17 11:24:06.171910",
+ "modified": "2025-01-21 11:03:18.616802",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Frappe Welding",
@@ -41,6 +41,21 @@
    "doc_view": "List",
    "label": "Ensayo WPQR",
    "link_to": "Ensayo WPQR",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Certificaci\u00f3N De Soldador",
+   "link_to": "Certificaci\u00f3n de Soldador",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Prueba Certificacion",
+   "link_to": "Prueba Certificacion",
    "stats_filter": "[]",
    "type": "DocType"
   },

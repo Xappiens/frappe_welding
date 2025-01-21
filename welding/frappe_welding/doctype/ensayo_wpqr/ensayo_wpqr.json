@@ -1,28 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:WPQR-{YYYY}-{MM}-{#####}",
  "creation": "2025-01-07 09:35:01.077987",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "identificador",
+  "wpq",
+  "homologaci\u00f3n",
+  "wps",
+  "column_break_i3uw1",
+  "status",
+  "soldador",
+  "prueba_certificacion",
+  "section_break_mgfnk",
   "tipo_de_proceso",
   "material_base",
   "tipo_de_corriente",
+  "column_break_bb7go",
   "gas_de_proteccion",
   "tipo_de_prueba"
  ],
  "fields": [
-  {
-   "fieldname": "identificador",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Identificador",
-   "reqd": 1,
-   "search_index": 1
-  },
   {
    "fieldname": "tipo_de_proceso",
    "fieldtype": "Link",
@@ -50,14 +51,82 @@
    "fieldtype": "Link",
    "label": "Tipo de prueba",
    "options": "Tipo de prueba"
+  },
+  {
+   "fieldname": "wpq",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "WPQ",
+   "options": "Cualificacion WPQ",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "wpq.wps",
+   "fieldname": "wps",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "WPS",
+   "options": "Procedimiento WPS",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "wpq.soldador",
+   "fieldname": "soldador",
+   "fieldtype": "Link",
+   "label": "Soldador",
+   "options": "Soldador",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "wpq.prueba_certificacion",
+   "fieldname": "prueba_certificacion",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Prueba Certificacion",
+   "options": "Prueba Certificacion",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_i3uw1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mgfnk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bb7go",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "wpq.homologaci\u00f3n",
+   "fieldname": "homologaci\u00f3n",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Homologaci\u00f3n",
+   "options": "Homologacion",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Pendiente",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Pendiente\nAprobar\nFallar"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-20 06:21:09.862736",
+ "modified": "2025-01-21 09:20:07.748100",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Ensayo WPQR",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -75,5 +144,18 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Yellow",
+   "title": "Pendiente"
+  },
+  {
+   "color": "Green",
+   "title": "Aprobar"
+  },
+  {
+   "color": "Red",
+   "title": "Fallar"
+  }
+ ]
 }

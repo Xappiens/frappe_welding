@@ -189,3 +189,23 @@ module_list = ["Frappe Welding"]
 # auth_hooks = [
 #	"welding.auth.validate"
 # ]
+
+
+fixtures = [
+{
+    "doctype": "Role",
+    "filters": [
+        [
+            "name",
+            "in",
+            [
+                "Quality Managers",
+                "Technical Office",
+                "Welding Supervisors",
+                "Welders"
+            ],
+        ]
+    ],
+},
+
+]

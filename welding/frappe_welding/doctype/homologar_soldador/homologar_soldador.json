@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:HS-{YYYY}-{MM}-{###}",
  "creation": "2025-01-14 11:34:03.498956",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,40 +9,35 @@
  "engine": "InnoDB",
  "field_order": [
   "soldador",
+  "prueba_certificacion",
   "homologaci\u00f3n",
-  "fecha_y_hora_prueba",
-  "calificaci\u00f3n",
-  "fecha_validez",
-  "amended_from"
+  "tipo_de_certificaci\u00f3n",
+  "tipo_de_prueba",
+  "column_break_lqsv4",
+  "estado",
+  "fecha_de_certificaci\u00f3n",
+  "fecha_de_vencimiento_de_la_certificaci\u00f3n",
+  "amended_from",
+  "observaciones"
  ],
  "fields": [
   {
    "fieldname": "soldador",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Soldador",
-   "options": "Soldador"
+   "options": "Soldador",
+   "reqd": 1
   },
   {
+   "fetch_from": "prueba_certificacion.homologaci\u00f3n",
    "fieldname": "homologaci\u00f3n",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Homologaci\u00f3n",
-   "options": "Homologacion"
-  },
-  {
-   "fieldname": "fecha_y_hora_prueba",
-   "fieldtype": "Datetime",
-   "label": "Fecha y hora prueba"
-  },
-  {
-   "fieldname": "calificaci\u00f3n",
-   "fieldtype": "Select",
-   "label": "Calificaci\u00f3n",
-   "options": "\nApto\nNo apto"
-  },
-  {
-   "fieldname": "fecha_validez",
-   "fieldtype": "Date",
-   "label": "Fecha validez"
+   "options": "Homologacion",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -52,15 +48,65 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "tipo_de_certificaci\u00f3n",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tipo de certificaci\u00f3n",
+   "options": "Inicial\nRecertificaci\u00f3n",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "prueba_certificacion.tipo_de_prueba",
+   "fieldname": "tipo_de_prueba",
+   "fieldtype": "Select",
+   "label": "Tipo de prueba",
+   "options": "Destructivo Prueba(DT)\nPrueba No-Destructivas(NDT)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "fecha_de_certificaci\u00f3n",
+   "fieldtype": "Date",
+   "label": "Fecha de certificaci\u00f3n"
+  },
+  {
+   "fieldname": "fecha_de_vencimiento_de_la_certificaci\u00f3n",
+   "fieldtype": "Date",
+   "label": "Fecha de vencimiento de la certificaci\u00f3n"
+  },
+  {
+   "fieldname": "column_break_lqsv4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prueba_certificacion",
+   "fieldtype": "Link",
+   "label": "Prueba Certificacion",
+   "options": "Prueba Certificacion",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "\nActivo\nVencido"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-20 06:27:40.730244",
+ "modified": "2025-01-21 11:37:14.053500",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Homologar soldador",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -81,23 +127,11 @@
  "states": [
   {
    "color": "Green",
-   "custom": 1,
-   "title": "Validado"
-  },
-  {
-   "color": "Yellow",
-   "custom": 1,
-   "title": "Borrador"
+   "title": "Activo"
   },
   {
    "color": "Red",
-   "custom": 1,
-   "title": "Cancelado"
-  },
-  {
-   "color": "Blue",
-   "custom": 1,
-   "title": "Procesando"
+   "title": "Vencido"
   }
  ]
 }

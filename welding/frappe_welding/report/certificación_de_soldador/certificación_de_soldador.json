@@ -1,0 +1,26 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-01-21 10:16:30.299170",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2025-01-21 10:16:30.299170",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Certificaci\u00f3n de Soldador",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Soldador",
+ "report_name": "Certificaci\u00f3n de Soldador",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

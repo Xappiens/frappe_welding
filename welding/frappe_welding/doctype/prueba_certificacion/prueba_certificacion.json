@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PCT-{YYYY}-{####}",
+ "creation": "2025-01-20 12:27:28.474210",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "soldador",
+  "homologaci\u00f3n",
+  "fecha_de_prueba",
+  "tipo_de_prueba",
+  "column_break_vd6bk",
+  "status",
+  "informe_de_prueba",
+  "observaciones",
+  "detalles_de_soldadura_section",
+  "detalles_de_la_prueba_de_soldadura"
+ ],
+ "fields": [
+  {
+   "fieldname": "soldador",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Soldador",
+   "options": "Soldador",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fecha_de_prueba",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Fecha de prueba",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tipo_de_prueba",
+   "fieldtype": "Select",
+   "label": "Tipo de prueba",
+   "options": "Destructivo Prueba(DT)\nPrueba No-Destructivas(NDT)"
+  },
+  {
+   "fieldname": "homologaci\u00f3n",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Homologaci\u00f3n",
+   "options": "Homologacion",
+   "reqd": 1
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "informe_de_prueba",
+   "fieldtype": "Attach",
+   "label": "Informe de prueba"
+  },
+  {
+   "fieldname": "column_break_vd6bk",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "detalles_de_soldadura_section",
+   "fieldtype": "Section Break",
+   "label": "Detalles de Soldadura"
+  },
+  {
+   "fieldname": "detalles_de_la_prueba_de_soldadura",
+   "fieldtype": "Table",
+   "label": "Detalles de la prueba de soldadura",
+   "options": "Detalles de la prueba de soldadura"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Pendiente\nAprobar\nFallar",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Homologar soldador",
+   "link_fieldname": "prueba_certificacion"
+  }
+ ],
+ "modified": "2025-01-21 09:16:16.892804",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Prueba Certificacion",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Yellow",
+   "title": "Pendiente"
+  },
+  {
+   "color": "Green",
+   "title": "Aprobar"
+  },
+  {
+   "color": "Red",
+   "title": "Fallar"
+  }
+ ]
+}

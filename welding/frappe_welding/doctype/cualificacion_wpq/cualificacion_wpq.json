@@ -1,14 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:nombre",
+ "autoname": "format:WPQ-{YYYY}-{MM}-{####}",
  "creation": "2025-01-07 09:31:59.695062",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "nombre",
+  "prueba_certificacion",
+  "homologaci\u00f3n",
+  "wps",
+  "column_break_t4nsf",
+  "soldador",
+  "status",
+  "wpqr",
+  "detalles_de_calificaci\u00f3n_section",
   "tipo_de_proceso",
   "tipo_de_producto",
   "material_base",
@@ -17,6 +24,7 @@
   "grado_de_mecanizacion",
   "posiciones_de_soldadura",
   "tipo_de_union",
+  "column_break_i8wlt",
   "tipo_de_corriente",
   "tratamiento_termico",
   "modo_de_transferencia",
@@ -27,15 +35,6 @@
   "especificaciones_de_hilo"
  ],
  "fields": [
-  {
-   "fieldname": "nombre",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Nombre",
-   "reqd": 1,
-   "search_index": 1,
-   "unique": 1
-  },
   {
    "fieldname": "tipo_de_proceso",
    "fieldtype": "Link",
@@ -120,15 +119,79 @@
    "fieldname": "especificaciones_de_hilo",
    "fieldtype": "Data",
    "label": "Especificaciones de hilo"
+  },
+  {
+   "fetch_from": "prueba_certificacion.soldador",
+   "fieldname": "soldador",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Soldador",
+   "options": "Soldador",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_i8wlt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "detalles_de_calificaci\u00f3n_section",
+   "fieldtype": "Section Break",
+   "label": "Detalles de calificaci\u00f3n"
+  },
+  {
+   "fieldname": "prueba_certificacion",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Prueba Certificacion",
+   "options": "Prueba Certificacion",
+   "reqd": 1
+  },
+  {
+   "fieldname": "wps",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "WPS",
+   "options": "Procedimiento WPS",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_t4nsf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "prueba_certificacion.homologaci\u00f3n",
+   "fieldname": "homologaci\u00f3n",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Homologaci\u00f3n",
+   "options": "Homologacion",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "wpqr",
+   "fieldtype": "Link",
+   "label": "WPQR",
+   "options": "Ensayo WPQR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Pendiente\nAprobar\nFallar",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 10:58:50.011872",
+ "modified": "2025-01-21 09:13:23.690391",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Cualificacion WPQ",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -146,5 +209,18 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Yellow",
+   "title": "Pendiente"
+  },
+  {
+   "color": "Green",
+   "title": "Aprobar"
+  },
+  {
+   "color": "Red",
+   "title": "Fallar"
+  }
+ ]
 }

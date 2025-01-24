@@ -17,12 +17,14 @@
   {
    "fieldname": "nombre",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Nombre",
    "unique": 1
   },
   {
    "fieldname": "configuracion",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Configuracion"
   },
   {
@@ -33,12 +35,13 @@
   {
    "fieldname": "notas_adiciales",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Notas adiciales"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 10:35:50.316591",
+ "modified": "2025-01-24 06:16:54.834326",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Tipo de union",

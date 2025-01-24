@@ -14,7 +14,6 @@
   "departamento",
   "column_break_cos6i",
   "estado",
-  "tipo_de_empleo",
   "compa\u00f1\u00eda",
   "calificaci\u00f3n_section",
   "experiencia_laboral_previa_section",
@@ -60,12 +59,6 @@
    "fieldname": "estado",
    "fieldtype": "Read Only",
    "label": "Estado"
-  },
-  {
-   "fetch_from": "empleado.employment_type",
-   "fieldname": "tipo_de_empleo",
-   "fieldtype": "Read Only",
-   "label": "Tipo de empleo"
   },
   {
    "fieldname": "detalles_tab",
@@ -161,8 +154,7 @@
    "fieldname": "historial_certificacion",
    "fieldtype": "Table",
    "label": "Historial Certificacion",
-   "options": "Historial Certificacion",
-   "read_only": 1
+   "options": "Historial Certificacion"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -176,7 +168,7 @@
    "link_fieldname": "soldador"
   }
  ],
- "modified": "2025-01-21 14:45:15.206811",
+ "modified": "2025-01-22 09:15:31.802716",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Soldador",

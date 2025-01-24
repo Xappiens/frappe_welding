@@ -14,19 +14,19 @@
   "column_break_t4nsf",
   "soldador",
   "status",
-  "wpqr",
   "detalles_de_calificaci\u00f3n_section",
   "tipo_de_proceso",
   "tipo_de_producto",
   "material_base",
+  "material_de_relleno",
   "espesor_de_material_base",
-  "espesor_de_material_depositado",
   "grado_de_mecanizacion",
   "posiciones_de_soldadura",
   "tipo_de_union",
   "column_break_i8wlt",
   "tipo_de_corriente",
   "tratamiento_termico",
+  "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
   "modo_de_transferencia",
   "gas_de_proteccion",
   "gas_de_respaldo",
@@ -59,11 +59,6 @@
    "label": "Espesor de material base"
   },
   {
-   "fieldname": "espesor_de_material_depositado",
-   "fieldtype": "Data",
-   "label": "Espesor de material depositado"
-  },
-  {
    "fieldname": "grado_de_mecanizacion",
    "fieldtype": "Data",
    "label": "Grado de mecanizacion"
@@ -92,8 +87,9 @@
   },
   {
    "fieldname": "modo_de_transferencia",
-   "fieldtype": "Data",
-   "label": "Modo de transferencia"
+   "fieldtype": "Select",
+   "label": "Modo de transferencia",
+   "options": "Cortocircuito\nPulsado\nPulverizar\nGlobulares."
   },
   {
    "fieldname": "gas_de_proteccion",
@@ -152,7 +148,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "WPS",
-   "options": "Procedimiento WPS",
+   "options": "Procedimiento",
    "reqd": 1
   },
   {
@@ -170,24 +166,30 @@
    "reqd": 1
   },
   {
-   "fieldname": "wpqr",
-   "fieldtype": "Link",
-   "label": "WPQR",
-   "options": "Ensayo WPQR",
-   "read_only": 1
-  },
-  {
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Estado",
    "options": "Pendiente\nAprobar\nFallar",
    "reqd": 1
+  },
+  {
+   "fieldname": "material_de_relleno",
+   "fieldtype": "Link",
+   "label": "Material de Relleno",
+   "options": "Material de Relleno"
+  },
+  {
+   "depends_on": "eval:doc.tratamiento_termico == 1 ",
+   "fieldname": "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
+   "fieldtype": "Small Text",
+   "label": "Descripci\u00f3n del tratamiento t\u00e9rmico",
+   "mandatory_depends_on": "eval:doc.tratamiento_termico"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-21 09:13:23.690391",
+ "modified": "2025-01-24 11:24:55.012646",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Cualificacion WPQ",

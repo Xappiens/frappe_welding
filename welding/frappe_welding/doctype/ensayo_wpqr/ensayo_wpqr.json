@@ -8,9 +8,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "wpq",
-  "homologaci\u00f3n",
   "wps",
+  "homologaci\u00f3n",
   "column_break_i3uw1",
   "status",
   "soldador",
@@ -53,21 +52,12 @@
    "options": "Tipo de prueba"
   },
   {
-   "fieldname": "wpq",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "WPQ",
-   "options": "Cualificacion WPQ",
-   "reqd": 1
-  },
-  {
    "fetch_from": "wpq.wps",
    "fieldname": "wps",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "WPS",
-   "options": "Procedimiento WPS",
-   "read_only": 1,
+   "options": "Procedimiento",
    "reqd": 1
   },
   {
@@ -122,7 +112,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-21 09:20:07.748100",
+ "modified": "2025-01-23 11:40:52.022781",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Ensayo WPQR",

@@ -2,6 +2,7 @@ frappe.ui.form.on('Soldador', {
     refresh: function(frm) {
         // Apply custom styling on refresh
         setRowColor(frm);
+        set_homologar(frm);
     },
     historial_certificacion: function(frm) {
         // Apply custom styling when a row is added to the historial_certificacion table
@@ -27,4 +28,18 @@ function setRowColor(frm) {
             }
         });
     });
+}
+function set_homologar(frm) {
+    if (frm.doc.__onload && frm.doc.__onload.dashboard_info) {
+        let info = frm.doc.__onload.dashboard_info;
+        console.log("set_homologar", info);
+
+        // Iterate over the active_homologacions array
+        for (let active_homologacion of info.active_homologacions) {
+            frm.dashboard.add_indicator(
+                active_homologacion.homologacion, // Only display the homologacion name
+                active_homologacion.color // Set the color to be used for the indicator
+            );
+        }
+    }
 }

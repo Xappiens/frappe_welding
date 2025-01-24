@@ -8,34 +8,25 @@ class Homologarsoldador(Document):
         self.update_prueba_certificacion(self.name)
 	
     def update_prueba_certificacion(self, homologar_soldador_name):
-        # Get the related welder (soldador)
+        # Get the related welder (soldador) 
         soldador = frappe.get_doc("Soldador", self.soldador)
         
         # Check if the Soldador already has a certificate in historial_certificacion
         existing_certificate = None
         for entry in soldador.historial_certificacion:
-            if entry.certificación == homologar_soldador_name:
+            if entry.prueba_certificacion == self.prueba_certificacion:
                 existing_certificate = entry
                 break
 
         # If there is an existing certificate, we can either update it or skip adding
         if existing_certificate:
             # If you want to update the existing entry, you can modify its fields here
-            existing_certificate.homologación = self.homologación
+            existing_certificate.certificación = homologar_soldador_name
             existing_certificate.tipo_de_certificación = self.tipo_de_certificación
             existing_certificate.status = self.estado
             existing_certificate.fecha_de_certificación = self.fecha_de_certificación
             existing_certificate.fecha_de_vencimiento_de_la_certificación = self.fecha_de_vencimiento_de_la_certificación
-        else:
-            # Add a new entry to the historial_certificacion table
-            new_certification_entry = soldador.append("historial_certificacion", {
-                "certificación": homologar_soldador_name,  
-                "homologación": self.homologación,
-                "tipo_de_certificación": self.tipo_de_certificación,
-                "status": self.estado,
-                "fecha_de_certificación": self.fecha_de_certificación,
-                "fecha_de_vencimiento_de_la_certificación": self.fecha_de_vencimiento_de_la_certificación
-            })
+       
         
         # Save the updated Soldador document
         soldador.save()

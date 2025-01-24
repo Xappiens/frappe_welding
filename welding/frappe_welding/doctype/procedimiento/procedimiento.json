@@ -13,10 +13,10 @@
   "norma",
   "tipo_de_producto",
   "material_base",
-  "espesor_de_material_base",
-  "espesor_de_material_depositado",
+  "material_de_relleno",
   "tipo_de_union",
   "tratamiento_termico",
+  "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
   "column_break_regvn",
   "modo_de_transferencia",
   "gas_de_protecci\u00f3n",
@@ -24,7 +24,11 @@
   "material_de_aporte",
   "especificaciones_de_electrodo",
   "especificaciones_de_hilo",
-  "tipo_proceso"
+  "tipo_proceso",
+  "espesor_de_material_base_section",
+  "espesor_m\u00ednimo",
+  "espesor_m\u00e1ximo",
+  "rango_de_espesor"
  ],
  "fields": [
   {
@@ -41,32 +45,22 @@
    "options": "Material base"
   },
   {
-   "fieldname": "espesor_de_material_base",
-   "fieldtype": "Data",
-   "label": "Espesor de material base",
-   "options": "10\n12\n15\n26\n36\n14\n20\n4\n2\n3\n10\n6\n8\n25\n2,5\n27"
-  },
-  {
-   "fieldname": "espesor_de_material_depositado",
-   "fieldtype": "Data",
-   "label": "Espesor de material depositado",
-   "options": "10\n12\n15\n26\n36\n14\n20\n4\n2\n3\n10\n6\n8\n25\n2,5\n27"
-  },
-  {
    "fieldname": "tipo_de_union",
    "fieldtype": "Link",
    "label": "Tipo de union",
    "options": "Tipo de union"
   },
   {
+   "default": "0",
    "fieldname": "tratamiento_termico",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Tratamiento termico"
   },
   {
    "fieldname": "modo_de_transferencia",
-   "fieldtype": "Data",
-   "label": "Modo de transferencia"
+   "fieldtype": "Select",
+   "label": "Modo de transferencia",
+   "options": "Cortocircuito\nPulsado\nPulverizar\nGlobulares."
   },
   {
    "fieldname": "gas_de_protecci\u00f3n",
@@ -104,6 +98,8 @@
   {
    "fieldname": "tipo_proceso",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Tipo Proceso",
    "options": "Tipo proceso"
   },
@@ -116,14 +112,60 @@
    "fieldtype": "Select",
    "label": "Norma",
    "options": "ASME IX\n15614-1\n15613-1\n15614-2"
+  },
+  {
+   "fieldname": "espesor_de_material_base_section",
+   "fieldtype": "Section Break",
+   "label": "Espesor de material base"
+  },
+  {
+   "fieldname": "espesor_m\u00ednimo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Espesor m\u00ednimo",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "espesor_m\u00e1ximo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Espesor M\u00e1ximo"
+  },
+  {
+   "fieldname": "rango_de_espesor",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rango de espesor",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.tratamiento_termico == 1 ",
+   "fieldname": "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
+   "fieldtype": "Small Text",
+   "label": "Descripci\u00f3n del tratamiento t\u00e9rmico",
+   "mandatory_depends_on": "eval:doc.tratamiento_termico"
+  },
+  {
+   "fieldname": "material_de_relleno",
+   "fieldtype": "Link",
+   "label": "Material de Relleno",
+   "options": "Material de Relleno"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-01-13 12:39:01.799404",
+ "links": [
+  {
+   "link_doctype": "WPS",
+   "link_fieldname": "procedimiento"
+  }
+ ],
+ "modified": "2025-01-24 11:21:58.223808",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
- "name": "Procedimiento WPS",
+ "name": "Procedimiento",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

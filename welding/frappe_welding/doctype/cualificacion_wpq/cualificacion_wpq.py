@@ -5,9 +5,9 @@ import frappe
 from frappe.model.document import Document
 from frappe import _
 class CualificacionWPQ(Document):
-	
-    def after_insert(self):
-        update_prueba_certificacion(self.prueba_certificacion,self.wps, self.name)
+	pass
+    # def after_insert(self):
+    #     update_prueba_certificacion(self.prueba_certificacion,self.wps, self.name)
         
 def update_prueba_certificacion(prueba_certificacion_name, wps_name, wpq_name):
     # Fetch the "Prueba Certificacion" document

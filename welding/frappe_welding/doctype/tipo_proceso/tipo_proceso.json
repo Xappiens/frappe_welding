@@ -17,6 +17,7 @@
   {
    "fieldname": "nombre",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Nombre",
    "unique": 1
   },
@@ -33,12 +34,13 @@
   {
    "fieldname": "notas_tecnicas",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Notas tecnicas"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 10:51:01.286151",
+ "modified": "2025-01-24 06:14:42.586211",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Tipo proceso",

@@ -7,8 +7,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "certificaci\u00f3n",
+  "prueba_certificacion",
+  "prueba_certificacion_estado",
   "homologaci\u00f3n",
+  "certificaci\u00f3n",
   "tipo_de_certificaci\u00f3n",
   "status",
   "fecha_de_certificaci\u00f3n",
@@ -23,7 +25,7 @@
    "options": "Homologar soldador"
   },
   {
-   "fetch_from": "certificaci\u00f3n.homologaci\u00f3n",
+   "fetch_from": "prueba_certificacion.homologaci\u00f3n",
    "fieldname": "homologaci\u00f3n",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -36,7 +38,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Tipo de certificaci\u00f3n",
-   "options": "Inicial\nRecertificaci\u00f3n"
+   "options": "\nInicial\nRecertificaci\u00f3n"
   },
   {
    "fetch_from": "certificaci\u00f3n.fecha_de_certificaci\u00f3n",
@@ -57,14 +59,26 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Estado",
+   "label": "Certificacion Estado",
    "options": "\nActivo\nVencido"
+  },
+  {
+   "fieldname": "prueba_certificacion",
+   "fieldtype": "Link",
+   "label": "Prueba Certificacion",
+   "options": "Prueba Certificacion"
+  },
+  {
+   "fetch_from": "prueba_certificacion.status",
+   "fieldname": "prueba_certificacion_estado",
+   "fieldtype": "Read Only",
+   "label": "Prueba Certificacion Estado"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-21 12:04:03.233361",
+ "modified": "2025-01-22 11:01:36.048591",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Historial Certificacion",

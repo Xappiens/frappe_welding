@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{grupo_de_base_material}-{grupo_de_relleno_material}",
+ "creation": "2025-01-24 07:22:10.547106",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "grupo_de_base_material",
+  "grupo_de_relleno_material"
+ ],
+ "fields": [
+  {
+   "fieldname": "grupo_de_base_material",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Grupo de Base Material",
+   "options": "FM1\nFM2\nFM3\nFM4\nFM5\nFM6\nFM7\nFM8\nFM9\nFM10\nFM11",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grupo_de_relleno_material",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Grupo de Relleno Material",
+   "options": "FM1\nFM2\nFM3\nFM4\nFM5",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-24 07:22:56.132453",
+ "modified_by": "Administrator",
+ "module": "Frappe Welding",
+ "name": "Reglas Compatibilidad Materiales",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

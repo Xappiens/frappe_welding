@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestProcedimientoWPS(FrappeTestCase):
+class TestMaterialdeRelleno(FrappeTestCase):
 	pass

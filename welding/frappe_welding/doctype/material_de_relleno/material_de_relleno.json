@@ -2,14 +2,16 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:nombre",
- "creation": "2025-01-08 10:51:18.685294",
+ "creation": "2025-01-24 06:53:30.614841",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "nombre",
-  "procedimiento"
+  "grupo_de_material",
+  "descripcion",
+  "especificaciones_tecnicas"
  ],
  "fields": [
   {
@@ -21,18 +23,28 @@
    "unique": 1
   },
   {
-   "fieldname": "procedimiento",
-   "fieldtype": "Table MultiSelect",
-   "label": "Procedimiento",
-   "options": "Procedimientos WPS Homologacion"
+   "fieldname": "grupo_de_material",
+   "fieldtype": "Select",
+   "label": "Grupo de material",
+   "options": "FM1\nFM2\nFM3\nFM4\nFM5"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Data",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "especificaciones_tecnicas",
+   "fieldtype": "Data",
+   "label": "Especificaciones tecnicas"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-23 08:52:54.396279",
+ "modified": "2025-01-24 07:23:07.665667",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
- "name": "Homologacion",
+ "name": "Material de Relleno",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

@@ -6,9 +6,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "procedimiento",
   "wps",
   "wpq",
-  "wpqr",
   "status"
  ],
  "fields": [
@@ -25,14 +25,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "WPS",
-   "options": "Procedimiento WPS"
-  },
-  {
-   "fieldname": "wpqr",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "WPQR",
-   "options": "Ensayo WPQR"
+   "options": "WPS"
   },
   {
    "fetch_from": "wpq.status",
@@ -40,12 +33,18 @@
    "fieldtype": "Read Only",
    "in_list_view": 1,
    "label": "Estado"
+  },
+  {
+   "fieldname": "procedimiento",
+   "fieldtype": "Link",
+   "label": "Procedimiento",
+   "options": "Procedimiento"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-21 09:43:21.570213",
+ "modified": "2025-01-24 12:18:16.770796",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Detalles de la prueba de soldadura",

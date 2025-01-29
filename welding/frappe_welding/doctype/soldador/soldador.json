@@ -8,6 +8,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "serie_de_nombres_tab",
   "detalles_tab",
   "empleado",
   "designaci\u00f3n",
@@ -155,6 +156,13 @@
    "fieldtype": "Table",
    "label": "Historial Certificacion",
    "options": "Historial Certificacion"
+  },
+  {
+   "fieldname": "serie_de_nombres_tab",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Serie de nombres",
+   "options": "SOD-.YYYY.-.####"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -168,7 +176,7 @@
    "link_fieldname": "soldador"
   }
  ],
- "modified": "2025-01-22 09:15:31.802716",
+ "modified": "2025-01-28 07:21:15.589505",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Soldador",

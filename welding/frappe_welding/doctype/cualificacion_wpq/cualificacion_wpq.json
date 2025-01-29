@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:WPQ-{YYYY}-{MM}-{####}",
+ "autoname": "naming_series:",
  "creation": "2025-01-07 09:31:59.695062",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "prueba_certificacion",
   "homologaci\u00f3n",
   "wps",
@@ -30,7 +31,6 @@
   "modo_de_transferencia",
   "gas_de_proteccion",
   "gas_de_respaldo",
-  "material_de_aporte",
   "especificaciones_de_electrodo",
   "especificaciones_de_hilo"
  ],
@@ -81,8 +81,9 @@
    "label": "Tipo de corriente"
   },
   {
+   "default": "0",
    "fieldname": "tratamiento_termico",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Tratamiento termico"
   },
   {
@@ -102,11 +103,6 @@
    "label": "Gas de respaldo"
   },
   {
-   "fieldname": "material_de_aporte",
-   "fieldtype": "Data",
-   "label": "Material de aporte"
-  },
-  {
    "fieldname": "especificaciones_de_electrodo",
    "fieldtype": "Data",
    "label": "Especificaciones de electrodo"
@@ -123,8 +119,7 @@
    "in_list_view": 1,
    "label": "Soldador",
    "options": "Soldador",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "column_break_i8wlt",
@@ -140,16 +135,14 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Prueba Certificacion",
-   "options": "Prueba Certificacion",
-   "reqd": 1
+   "options": "Prueba Certificacion"
   },
   {
    "fieldname": "wps",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "WPS",
-   "options": "Procedimiento",
-   "reqd": 1
+   "options": "WPS"
   },
   {
    "fieldname": "column_break_t4nsf",
@@ -162,8 +155,7 @@
    "in_list_view": 1,
    "label": "Homologaci\u00f3n",
    "options": "Homologacion",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "status",
@@ -185,15 +177,22 @@
    "fieldtype": "Small Text",
    "label": "Descripci\u00f3n del tratamiento t\u00e9rmico",
    "mandatory_depends_on": "eval:doc.tratamiento_termico"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Serie de nombres",
+   "options": "WPQ-.YYYY.-.MM.-.####"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-24 11:24:55.012646",
+ "modified": "2025-01-28 07:50:56.518260",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Cualificacion WPQ",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:PCT-{YYYY}-{####}",
+ "autoname": "naming_series:",
  "creation": "2025-01-20 12:27:28.474210",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "soldador",
   "homologaci\u00f3n",
   "fecha_de_prueba",
@@ -82,6 +83,13 @@
    "label": "Estado",
    "options": "Pendiente\nAprobar\nFallar",
    "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Serie de nombres",
+   "options": "PCT-.YYYY.-.####"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -91,11 +99,11 @@
    "link_fieldname": "prueba_certificacion"
   }
  ],
- "modified": "2025-01-21 09:16:16.892804",
+ "modified": "2025-01-28 07:23:34.227816",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Prueba Certificacion",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

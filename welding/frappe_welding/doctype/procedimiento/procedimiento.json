@@ -21,7 +21,6 @@
   "modo_de_transferencia",
   "gas_de_protecci\u00f3n",
   "gas_de_respaldo",
-  "material_de_aporte",
   "especificaciones_de_electrodo",
   "especificaciones_de_hilo",
   "tipo_proceso",
@@ -71,11 +70,6 @@
    "fieldname": "gas_de_respaldo",
    "fieldtype": "Data",
    "label": "Gas de respaldo"
-  },
-  {
-   "fieldname": "material_de_aporte",
-   "fieldtype": "Data",
-   "label": "Material de aporte"
   },
   {
    "fieldname": "especificaciones_de_electrodo",
@@ -162,7 +156,7 @@
    "link_fieldname": "procedimiento"
   }
  ],
- "modified": "2025-01-24 11:21:58.223808",
+ "modified": "2025-01-28 07:50:29.660620",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Procedimiento",

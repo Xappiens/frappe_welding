@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"e88ADOJ7WC\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Frappe Welding<br></b></span>\",\"col\":12}},{\"id\":\"_81GoQgQdo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologacion\",\"col\":3}},{\"id\":\"VFVzOhPc3W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Soldador\",\"col\":3}},{\"id\":\"nuWX_avp09\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prueba Certificacion\",\"col\":3}},{\"id\":\"pBimN8CoKP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedimiento\",\"col\":3}},{\"id\":\"t2Q2MJHATn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"WPS\",\"col\":3}},{\"id\":\"evsi3ah8X2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cualificaci\u00f3n WPQ\",\"col\":3}},{\"id\":\"UUnCHQBnea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ensayo WPQR\",\"col\":3}},{\"id\":\"lkeZiytKOW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologar soldador\",\"col\":3}},{\"id\":\"osxHlgvC0C\",\"type\":\"header\",\"data\":{\"text\":\"<br>\",\"col\":12}},{\"id\":\"DNtcwc2S35\",\"type\":\"card\",\"data\":{\"card_name\":\"Ajustes\",\"col\":4}},{\"id\":\"Tum3j4SFsM\",\"type\":\"card\",\"data\":{\"card_name\":\"Reporte\",\"col\":4}}]",
+ "content": "[{\"id\":\"e88ADOJ7WC\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Frappe Welding<br></b></span>\",\"col\":12}},{\"id\":\"_81GoQgQdo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologacion\",\"col\":3}},{\"id\":\"pBimN8CoKP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Procedimiento\",\"col\":3}},{\"id\":\"t2Q2MJHATn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"WPS\",\"col\":3}},{\"id\":\"lkeZiytKOW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Homologar soldador\",\"col\":3}},{\"id\":\"VFVzOhPc3W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Soldador\",\"col\":3}},{\"id\":\"nuWX_avp09\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prueba Certificacion\",\"col\":3}},{\"id\":\"evsi3ah8X2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cualificaci\u00f3n WPQ\",\"col\":3}},{\"id\":\"UUnCHQBnea\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ensayo WPQR\",\"col\":3}},{\"id\":\"osxHlgvC0C\",\"type\":\"header\",\"data\":{\"text\":\"<br>\",\"col\":12}},{\"id\":\"nWSamNYYYc\",\"type\":\"card\",\"data\":{\"card_name\":\"Maestras\",\"col\":4}},{\"id\":\"DNtcwc2S35\",\"type\":\"card\",\"data\":{\"card_name\":\"Ajustes\",\"col\":4}},{\"id\":\"Tum3j4SFsM\",\"type\":\"card\",\"data\":{\"card_name\":\"Reporte\",\"col\":4}}]",
  "creation": "2025-01-14 08:16:02.898086",
  "custom_blocks": [],
  "docstatus": 0,
@@ -59,9 +59,38 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maestras",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material base",
+   "link_count": 0,
+   "link_to": "Material base",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material de Relleno",
+   "link_count": 0,
+   "link_to": "Material de Relleno",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-01-24 07:28:46.992943",
+ "modified": "2025-01-28 06:37:08.710145",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Frappe Welding",
@@ -72,7 +101,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 21.1,
+ "sequence_id": 1.0,
  "shortcuts": [
   {
    "color": "Grey",

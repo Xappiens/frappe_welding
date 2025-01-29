@@ -2,10 +2,10 @@ frappe.ui.form.on('Prueba Certificacion', {
     homologación: function (frm) {
         handle_homologacion_change(frm);
     },
+    // on_update: function (frm) {
+    //     handle_homologacion_change(frm);
+    // },
     on_update: function (frm) {
-        handle_homologacion_change(frm);
-    },
-    detalles_de_la_prueba_de_soldadura: function (frm) {
         update_parent_status_based_on_child(frm);
     },
     refresh: function (frm) {
@@ -18,8 +18,8 @@ frappe.ui.form.on('Prueba Certificacion', {
 // Function to handle changes in the 'homologación' field
 function handle_homologacion_change(frm) {
     if (!frm.doc.homologación) {
-        frm.clear_table('procedimiento_wps');
-        frm.refresh_field('procedimiento_wps');
+        frm.clear_table('detalles_de_la_prueba_de_soldadura');
+        frm.refresh_field('detalles_de_la_prueba_de_soldadura');
         return;
     }
 
@@ -37,25 +37,44 @@ function handle_homologacion_change(frm) {
                 return;
             }
 
-            const wps_names = homologation.procedimiento.map(item => item.procedimiento);
+            frm.clear_table('detalles_de_la_prueba_de_soldadura'); // Clear the table before populating it.
 
-
-            if (frm.fields_dict['detalles_de_la_prueba_de_soldadura']) {
-                frm.clear_table('detalles_de_la_prueba_de_soldadura');
-                wps_names.forEach(function (wps_name) {
-                    const row = frm.add_child('detalles_de_la_prueba_de_soldadura');
-                    row.procedimiento = wps_name;
+            // Iterate through each procedimiento in Homologacion
+            homologation.procedimiento.forEach(proc_item => {
+                frappe.call({
+                    method: 'frappe.client.get_list',
+                    args: {
+                        doctype: 'WPS',
+                        filters: { procedimiento: proc_item.procedimiento },
+                        fields: ['name']
+                    },
+                    callback: function (wps_response) {
+                        const wps_data = wps_response.message;
+            
+                        if (wps_data && wps_data.length) {
+                            wps_data.forEach(wps => {
+                                const row = frm.add_child('detalles_de_la_prueba_de_soldadura');
+                                row.procedimiento = proc_item.procedimiento;
+                                row.wps = wps.name;
+                            });
+                        } else {
+                            frappe.msgprint(__('No WPS found for procedimiento {0}', [proc_item.procedimiento]));
+                        }
+            
+                        frm.refresh_field('detalles_de_la_prueba_de_soldadura'); // Refresh after adding rows.
+                    }
                 });
-                frm.refresh_field('detalles_de_la_prueba_de_soldadura');
-            } else {
-                console.error('No "procedimiento" field found in the form.');
-            }
+            });
+            
         }
     });
 }
 
+
 // Function to update parent status based on child table rows
 function update_parent_status_based_on_child(frm) {
+    if (!frm.doc.detalles_de_la_prueba_de_soldadura) return;
+
     const allApproved = frm.doc.detalles_de_la_prueba_de_soldadura.every(row => row.status === "Aprobar");
     frm.set_value('status', allApproved ? 'Aprobar' : 'Pending');
 }
@@ -76,7 +95,7 @@ function show_wps_dialog(frm) {
                 fieldname: 'wps_select',
                 label: __('WPS'),
                 fieldtype: 'Link',
-                options: 'Procedimiento WPS',
+                options: 'WPS',
                 reqd: 1,
                 get_query: function () {
                     const wps_names = frm.doc.detalles_de_la_prueba_de_soldadura.map(item => item.wps);
@@ -102,7 +121,7 @@ function show_wps_dialog(frm) {
 }
 
 // Function to create a WPQ document
-function create_wpq(frm, selected_wps) {
+function    create_wpq(frm, selected_wps) {
     frappe.model.with_doctype('Cualificacion WPQ', function () {
         const wpq = frappe.model.get_new_doc('Cualificacion WPQ');
         wpq.prueba_certificacion = frm.doc.name;

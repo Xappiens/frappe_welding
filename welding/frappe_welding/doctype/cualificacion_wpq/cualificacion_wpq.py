@@ -5,11 +5,10 @@ import frappe
 from frappe.model.document import Document
 from frappe import _
 class CualificacionWPQ(Document):
-	pass
-    # def after_insert(self):
-    #     update_prueba_certificacion(self.prueba_certificacion,self.wps, self.name)
+    def on_update(self):
+        update_prueba_certificacion(self.prueba_certificacion,self.wps, self.name , self.status)
         
-def update_prueba_certificacion(prueba_certificacion_name, wps_name, wpq_name):
+def update_prueba_certificacion(prueba_certificacion_name, wps_name, wpq_name, status):
     # Fetch the "Prueba Certificacion" document
     prueba_certificacion = frappe.get_doc("Prueba Certificacion", prueba_certificacion_name)
     # Check if detalles_de_la_prueba_de_soldadura exists
@@ -20,6 +19,7 @@ def update_prueba_certificacion(prueba_certificacion_name, wps_name, wpq_name):
             if row.wps == wps_name:
                 # Link the WPQ to the current row
                 row.wpq = wpq_name
+                row.status = status
 
         # Save the updated "Prueba Certificacion" document after linking WPQ
         try:

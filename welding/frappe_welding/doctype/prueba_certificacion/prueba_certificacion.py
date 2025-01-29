@@ -3,13 +3,13 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe import _
 
 class PruebaCertificacion(Document):
 	
     def on_update(self):
         self.update_prueba_certificacion(self.name)
-        
-    def validate(self):
+    def after_insert(self):
         self.handle_homologacion_change()
 	
     def update_prueba_certificacion(self, prueba_certificacion_name):
@@ -31,7 +31,7 @@ class PruebaCertificacion(Document):
         else:
             # Add a new entry to the historial_certificacion table
             new_certification_entry = soldador.append("historial_certificacion", { 
-                "prueba_certificacion":self.name,                                                                  ""
+                "prueba_certificacion":self.name,               
                 "homologación": self.homologación,
                 "prueba_certificacion_estado": self.status,
             })
@@ -43,29 +43,39 @@ class PruebaCertificacion(Document):
     def handle_homologacion_change(self):
         if not self.homologación:
             # Clear 'procedimiento_wps' child table if no homologation
-            self.procedimiento_wps = []
+            self.detalles_de_la_prueba_de_soldadura = []
             self.save()
             return
 
         # Get the Homologacion document
         homologation = frappe.get_doc('Homologacion', self.homologación)
-        if not homologation or not homologation.procedimiento_wps:
-            frappe.msgprint(__('No valid procedimiento_wps found.'))
+        if not homologation or not homologation.procedimiento:
+            frappe.msgprint(_('No valid procedimientos found in Homologacion.'))
             return
+
+        # List of procedimientos from Homologacion
+        procedimientos = [item.procedimiento for item in homologation.procedimiento]
         
-        wps_names = [item.procedimiento for item in homologation.procedimiento_wps]
-        
-        # Clear the 'detalles_de_la_prueba_de_soldadura' child table if present
-        if hasattr(self, 'detalles_de_la_prueba_de_soldadura'):
-            self.detalles_de_la_prueba_de_soldadura = []
-            for wps_name in wps_names:
-                # Add each WPS to the child table
+        # Clear existing child table entries
+        self.detalles_de_la_prueba_de_soldadura = []
+
+        for procedimiento in procedimientos:
+            # Fetch WPS documents linked to the procedimiento
+            wps_list = frappe.get_all('WPS', filters={'procedimiento': procedimiento}, fields=['name'])
+            
+            if not wps_list:
+                frappe.msgprint(__('No WPS found for procedimiento {0}.').format(procedimiento))
+                continue
+            
+            for wps in wps_list:
+                # Add each WPS to the 'procedimiento_wps' child table
                 row = self.append('detalles_de_la_prueba_de_soldadura', {
-                    'wps': wps_name
+                    'procedimiento': procedimiento,
+                    'wps': wps['name']
                 })
-          
-        else:
-            frappe.log_error('No "procedimiento_wps" field found in the form.', 'Missing Field Error')
+        
+
+
 
 @frappe.whitelist()
 def assign_prueba_certificacion(rows, data):

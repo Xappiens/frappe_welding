@@ -17,8 +17,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "WPQ",
-   "options": "Cualificacion WPQ",
-   "unique": 1
+   "options": "Cualificacion WPQ"
   },
   {
    "fieldname": "wps",
@@ -44,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-24 12:18:16.770796",
+ "modified": "2025-01-29 06:53:58.669542",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Detalles de la prueba de soldadura",

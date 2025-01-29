@@ -21,7 +21,6 @@
   "modo_de_transferencia",
   "gas_de_protecci\u00f3n",
   "gas_de_respaldo",
-  "material_de_aporte",
   "especificaciones_de_electrodo",
   "especificaciones_de_hilo",
   "tipo_proceso",
@@ -32,18 +31,24 @@
  ],
  "fields": [
   {
+   "fetch_from": "procedimiento.norma",
+   "fetch_if_empty": 1,
    "fieldname": "norma",
    "fieldtype": "Select",
    "label": "Norma",
    "options": "ASME IX\n15614-1\n15613-1\n15614-2"
   },
   {
+   "fetch_from": "procedimiento.tipo_de_producto",
+   "fetch_if_empty": 1,
    "fieldname": "tipo_de_producto",
    "fieldtype": "Link",
    "label": "Tipo de producto",
    "options": "Tipo de producto"
   },
   {
+   "fetch_from": "procedimiento.material_base",
+   "fetch_if_empty": 1,
    "fieldname": "material_base",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -51,6 +56,8 @@
    "options": "Material base"
   },
   {
+   "fetch_from": "procedimiento.tipo_de_union",
+   "fetch_if_empty": 1,
    "fieldname": "tipo_de_union",
    "fieldtype": "Link",
    "label": "Tipo de union",
@@ -58,53 +65,65 @@
   },
   {
    "default": "0",
+   "fetch_from": "procedimiento.tratamiento_termico",
+   "fetch_if_empty": 1,
    "fieldname": "tratamiento_termico",
    "fieldtype": "Check",
    "label": "Tratamiento termico"
   },
   {
    "depends_on": "eval:doc.tratamiento_termico == 1",
+   "fetch_from": "procedimiento.descripci\u00f3n_del_tratamiento_t\u00e9rmico",
+   "fetch_if_empty": 1,
    "fieldname": "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
    "fieldtype": "Small Text",
    "label": "Descripci\u00f3n del tratamiento t\u00e9rmico",
    "mandatory_depends_on": "eval:doc.tratamiento_termico"
   },
   {
+   "fetch_if_empty": 1,
    "fieldname": "column_break_regvn",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "procedimiento.modo_de_transferencia",
+   "fetch_if_empty": 1,
    "fieldname": "modo_de_transferencia",
    "fieldtype": "Select",
    "label": "Modo de transferencia",
    "options": "Cortocircuito\nPulsado\nPulverizar\nGlobulares."
   },
   {
+   "fetch_from": "procedimiento.gas_de_protecci\u00f3n",
+   "fetch_if_empty": 1,
    "fieldname": "gas_de_protecci\u00f3n",
    "fieldtype": "Data",
    "label": "Gas de protecci\u00f3n"
   },
   {
+   "fetch_from": "procedimiento.gas_de_respaldo",
+   "fetch_if_empty": 1,
    "fieldname": "gas_de_respaldo",
    "fieldtype": "Data",
    "label": "Gas de respaldo"
   },
   {
-   "fieldname": "material_de_aporte",
-   "fieldtype": "Data",
-   "label": "Material de aporte"
-  },
-  {
+   "fetch_from": "procedimiento.especificaciones_de_electrodo",
+   "fetch_if_empty": 1,
    "fieldname": "especificaciones_de_electrodo",
    "fieldtype": "Data",
    "label": "Especificaciones de Electrodo"
   },
   {
+   "fetch_from": "procedimiento.especificaciones_de_hilo",
+   "fetch_if_empty": 1,
    "fieldname": "especificaciones_de_hilo",
    "fieldtype": "Data",
    "label": "Especificaciones de hilo"
   },
   {
+   "fetch_from": "procedimiento.tipo_proceso",
+   "fetch_if_empty": 1,
    "fieldname": "tipo_proceso",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -113,11 +132,14 @@
    "options": "Tipo proceso"
   },
   {
+   "fetch_if_empty": 1,
    "fieldname": "espesor_de_material_base_section",
    "fieldtype": "Section Break",
    "label": "Espesor de material base"
   },
   {
+   "fetch_from": "procedimiento.espesor_m\u00ednimo",
+   "fetch_if_empty": 1,
    "fieldname": "espesor_m\u00ednimo",
    "fieldtype": "Int",
    "in_list_view": 1,
@@ -126,6 +148,8 @@
    "non_negative": 1
   },
   {
+   "fetch_from": "procedimiento.espesor_m\u00e1ximo",
+   "fetch_if_empty": 1,
    "fieldname": "espesor_m\u00e1ximo",
    "fieldtype": "Int",
    "in_list_view": 1,
@@ -133,6 +157,7 @@
    "label": "Espesor M\u00e1ximo"
   },
   {
+   "fetch_from": "procedimiento.rango_de_espesor",
    "fieldname": "rango_de_espesor",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -156,7 +181,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-24 09:06:18.652036",
+ "modified": "2025-01-28 07:50:40.023795",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "WPS",

@@ -25,12 +25,14 @@
   {
    "fieldname": "grupo_de_material",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Grupo de material",
    "options": "FM1\nFM2\nFM3\nFM4\nFM5\nFM6\nFM7\nFM8\nFM9\nFM10\nFM11"
   },
   {
    "fieldname": "descripcion",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Descripcion"
   },
   {
@@ -41,7 +43,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-24 06:37:10.998815",
+ "modified": "2025-01-27 06:03:01.697274",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Material base",

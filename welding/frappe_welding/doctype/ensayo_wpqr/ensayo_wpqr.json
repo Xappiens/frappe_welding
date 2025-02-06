@@ -41,8 +41,9 @@
   },
   {
    "fieldname": "gas_de_proteccion",
-   "fieldtype": "Data",
-   "label": "Gas de proteccion"
+   "fieldtype": "Link",
+   "label": "Gas de proteccion",
+   "options": "Gas de Proteccion"
   },
   {
    "fieldname": "tipo_de_prueba",
@@ -94,7 +95,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-28 07:27:04.089764",
+ "modified": "2025-02-03 06:06:09.755873",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Ensayo WPQR",

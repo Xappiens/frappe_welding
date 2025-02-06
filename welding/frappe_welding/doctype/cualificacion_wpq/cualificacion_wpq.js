@@ -1,6 +1,9 @@
 frappe.ui.form.on("Cualificacion WPQ", {
   material_base : function(frm) {
     set_filters_filling_materials(frm);
+  },
+  prueba_certificacion : function(frm) {
+	set_filters_wps(frm);
   }
 });
 
@@ -30,5 +33,37 @@ function set_filters_filling_materials(frm){
 				}
 			}
 		});
+	}
+}
+
+function set_filters_wps(frm){
+	if(frm.doc.prueba_certificacion){
+		 frappe.call({
+        method: "frappe.client.get",
+        args: {
+            doctype: "Prueba Certificacion",
+            name: frm.doc.prueba_certificacion,
+        },
+        callback: function (response) {
+            const prueba_certificacion = response.message;
+			console.log("Prueba Certificacion", prueba_certificacion);
+			let wps_values = [];
+			prueba_certificacion.detalles_de_la_prueba_de_soldadura.forEach(function(row) {
+				const wps = row.wps;
+				if (wps) {
+					wps_values.push(wps);
+				}
+			});
+			frm.fields_dict['wps'].get_query = function(doc) {
+				return {
+					filters: {
+						'name': ['in', wps_values] 
+					}
+				};
+			};
+
+
+        },
+    });
 	}
 }

@@ -1,14 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:SOD-{YYYY}-{####}",
+ "autoname": "naming_series:",
  "creation": "2025-01-07 09:22:13.034771",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "serie_de_nombres_tab",
+  "naming_series",
   "detalles_tab",
   "empleado",
   "designaci\u00f3n",
@@ -158,7 +158,7 @@
    "options": "Historial Certificacion"
   },
   {
-   "fieldname": "serie_de_nombres_tab",
+   "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Serie de nombres",
@@ -176,11 +176,11 @@
    "link_fieldname": "soldador"
   }
  ],
- "modified": "2025-01-28 07:21:15.589505",
+ "modified": "2025-02-03 07:39:53.854146",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Soldador",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

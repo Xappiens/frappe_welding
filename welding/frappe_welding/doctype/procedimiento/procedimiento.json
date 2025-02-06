@@ -14,20 +14,23 @@
   "tipo_de_producto",
   "material_base",
   "material_de_relleno",
-  "tipo_de_union",
   "tratamiento_termico",
   "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
   "column_break_regvn",
   "modo_de_transferencia",
+  "tipo_de_union",
   "gas_de_protecci\u00f3n",
   "gas_de_respaldo",
+  "tipo_proceso",
   "especificaciones_de_electrodo",
   "especificaciones_de_hilo",
-  "tipo_proceso",
+  "especificaciones_de_electrodo_no_consumible",
   "espesor_de_material_base_section",
   "espesor_m\u00ednimo",
   "espesor_m\u00e1ximo",
-  "rango_de_espesor"
+  "rango_de_espesor",
+  "prueba_de_cup\u00f3n_espesor_m\u00ednimo",
+  "prueba_de_cup\u00f3n_espesor_m\u00e1ximo"
  ],
  "fields": [
   {
@@ -59,24 +62,28 @@
    "fieldname": "modo_de_transferencia",
    "fieldtype": "Select",
    "label": "Modo de transferencia",
-   "options": "Cortocircuito\nPulsado\nPulverizar\nGlobulares."
+   "options": "Cortocircuito\nGlobular\nPulsado\nSpray"
   },
   {
    "fieldname": "gas_de_protecci\u00f3n",
-   "fieldtype": "Data",
-   "label": "Gas de protecci\u00f3n"
+   "fieldtype": "Link",
+   "label": "Gas de protecci\u00f3n",
+   "options": "Gas de Proteccion"
   },
   {
    "fieldname": "gas_de_respaldo",
-   "fieldtype": "Data",
-   "label": "Gas de respaldo"
+   "fieldtype": "Link",
+   "label": "Gas de respaldo",
+   "options": "Gas de Respaldo"
   },
   {
+   "depends_on": "eval:doc.tipo_proceso == \"111\";",
    "fieldname": "especificaciones_de_electrodo",
    "fieldtype": "Data",
    "label": "Especificaciones de Electrodo"
   },
   {
+   "depends_on": "eval:doc.tipo_proceso && doc.tipo_proceso.toString().startsWith(\"13\")\n",
    "fieldname": "especificaciones_de_hilo",
    "fieldtype": "Data",
    "label": "Especificaciones de hilo"
@@ -132,7 +139,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Rango de espesor",
+   "label": "Rango de Espesor",
    "read_only": 1
   },
   {
@@ -147,6 +154,22 @@
    "fieldtype": "Link",
    "label": "Material de Relleno",
    "options": "Material de Relleno"
+  },
+  {
+   "depends_on": "eval:doc.tipo_proceso && doc.tipo_proceso.toString().startsWith(\"14\")\n",
+   "fieldname": "especificaciones_de_electrodo_no_consumible",
+   "fieldtype": "Data",
+   "label": "Especificaciones de Electrodo no Consumible"
+  },
+  {
+   "fieldname": "prueba_de_cup\u00f3n_espesor_m\u00ednimo",
+   "fieldtype": "Data",
+   "label": "Prueba de Cup\u00f3n Espesor M\u00ednimo"
+  },
+  {
+   "fieldname": "prueba_de_cup\u00f3n_espesor_m\u00e1ximo",
+   "fieldtype": "Data",
+   "label": "Prueba de Cup\u00f3n Espesor M\u00e1ximo"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -156,7 +179,7 @@
    "link_fieldname": "procedimiento"
   }
  ],
- "modified": "2025-01-28 07:50:29.660620",
+ "modified": "2025-02-03 07:51:44.718117",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Procedimiento",

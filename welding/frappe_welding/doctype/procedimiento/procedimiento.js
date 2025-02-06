@@ -1,9 +1,15 @@
 frappe.ui.form.on("Procedimiento", {
 	espesor_mínimo: function (frm) {
-	  update_rango_de_espesor(frm);
+		update_rango_de_espesor(frm);
 	},
 	espesor_máximo: function (frm) {
-	  update_rango_de_espesor(frm);
+		update_rango_de_espesor(frm);
+	},
+	prueba_de_cupón_espesor_mínimo: function (frm) {
+		update_rango_de_prueba_de_cupón(frm);
+	},
+	prueba_de_cupón_espesor_máximo: function (frm) {
+		update_rango_de_prueba_de_cupón(frm);
 	},
 	material_base: function (frm) {
 		set_filters_filling_materials(frm);
@@ -12,39 +18,51 @@ frappe.ui.form.on("Procedimiento", {
 
 function update_rango_de_espesor(frm) {
 	if (frm.doc.espesor_mínimo && frm.doc.espesor_máximo) {
-	  frm.set_value(
-		"rango_de_espesor",
-		`${frm.doc.espesor_mínimo} - ${frm.doc.espesor_máximo}`
-	  );
+		frm.set_value(
+			"rango_de_espesor",
+			`${frm.doc.espesor_mínimo} - ${frm.doc.espesor_máximo}`
+		);
 	} else {
-	  frm.set_value("rango_de_espesor", "");
+		frm.set_value("rango_de_espesor", "");
 	}
 }
 
-function set_filters_filling_materials(frm){
-	if(frm.doc.material_base){
+function update_rango_de_prueba_de_cupón(frm) {
+	if (frm.doc.prueba_de_cupón_espesor_mínimo && frm.doc.prueba_de_cupón_espesor_máximo) {
+		frm.set_value(
+			"rango_de_espesor_de_prueba_de_cupón",
+			`${frm.doc.prueba_de_cupón_espesor_mínimo} - ${frm.doc.prueba_de_cupón_espesor_máximo}`
+		);
+	} else {
+		frm.set_value("rango_de_espesor_de_prueba_de_cupón", "");
+	}
+}
+
+function set_filters_filling_materials(frm) {
+	if (frm.doc.material_base) {
 		frappe.call({
-			method: 'welding.frappe_welding.doctype.procedimiento.procedimiento.set_filling_materials',
+			method:
+				"welding.frappe_welding.doctype.procedimiento.procedimiento.set_filling_materials",
 			args: {
-				 // Assuming "Base Material" is the DocType where your material info is stored
-				 base_material: frm.doc.material_base       // The selected base material
+				// Assuming "Base Material" is the DocType where your material info is stored
+				base_material: frm.doc.material_base, // The selected base material
 			},
-			callback: function(response) {
+			callback: function (response) {
 				// Check if the response contains the material details
 				if (response.message) {
 					// Extract the list of compatible filling materials
 					let compatible_filling_materials = response.message;
 
 					// Filter the filling materials based on the compatible ones
-					frm.fields_dict['material_de_relleno'].get_query = function(doc) {
+					frm.fields_dict["material_de_relleno"].get_query = function (doc) {
 						return {
 							filters: {
-								'name': ['in', compatible_filling_materials.map(m => m.name)]  // Filter using names of compatible materials
-							}
+								name: ["in", compatible_filling_materials.map((m) => m.name)], // Filter using names of compatible materials
+							},
 						};
 					};
 				}
-			}
+			},
 		});
 	}
 }

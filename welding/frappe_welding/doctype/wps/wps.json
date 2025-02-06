@@ -14,6 +14,7 @@
   "norma",
   "tipo_de_producto",
   "material_base",
+  "material_de_relleno",
   "tipo_de_union",
   "tratamiento_termico",
   "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
@@ -21,13 +22,18 @@
   "modo_de_transferencia",
   "gas_de_protecci\u00f3n",
   "gas_de_respaldo",
+  "tipo_proceso",
   "especificaciones_de_electrodo",
   "especificaciones_de_hilo",
-  "tipo_proceso",
+  "especificaciones_de_electrodo_no_consumible",
   "espesor_de_material_base_section",
   "espesor_m\u00ednimo",
   "espesor_m\u00e1ximo",
-  "rango_de_espesor"
+  "rango_de_espesor",
+  "espesor_de_prueba_de_cup\u00f3n_section",
+  "prueba_de_cup\u00f3n_espesor_m\u00ednimo",
+  "prueba_de_cup\u00f3n_espesor_m\u00e1ximo",
+  "rango_de_espesor_de_prueba_de_cup\u00f3n"
  ],
  "fields": [
   {
@@ -81,33 +87,34 @@
    "mandatory_depends_on": "eval:doc.tratamiento_termico"
   },
   {
-   "fetch_if_empty": 1,
    "fieldname": "column_break_regvn",
    "fieldtype": "Column Break"
   },
   {
    "fetch_from": "procedimiento.modo_de_transferencia",
-   "fetch_if_empty": 1,
    "fieldname": "modo_de_transferencia",
    "fieldtype": "Select",
    "label": "Modo de transferencia",
-   "options": "Cortocircuito\nPulsado\nPulverizar\nGlobulares."
+   "options": "Cortocircuito\nGlobular\nPulsado\nSpray"
   },
   {
    "fetch_from": "procedimiento.gas_de_protecci\u00f3n",
    "fetch_if_empty": 1,
    "fieldname": "gas_de_protecci\u00f3n",
-   "fieldtype": "Data",
-   "label": "Gas de protecci\u00f3n"
+   "fieldtype": "Link",
+   "label": "Gas de protecci\u00f3n",
+   "options": "Gas de Proteccion"
   },
   {
    "fetch_from": "procedimiento.gas_de_respaldo",
    "fetch_if_empty": 1,
    "fieldname": "gas_de_respaldo",
-   "fieldtype": "Data",
-   "label": "Gas de respaldo"
+   "fieldtype": "Link",
+   "label": "Gas de respaldo",
+   "options": "Gas de Respaldo"
   },
   {
+   "depends_on": "eval:doc.tipo_proceso == \"111\";",
    "fetch_from": "procedimiento.especificaciones_de_electrodo",
    "fetch_if_empty": 1,
    "fieldname": "especificaciones_de_electrodo",
@@ -115,6 +122,7 @@
    "label": "Especificaciones de Electrodo"
   },
   {
+   "depends_on": "eval:doc.tipo_proceso && doc.tipo_proceso.toString().startsWith(\"13\")",
    "fetch_from": "procedimiento.especificaciones_de_hilo",
    "fetch_if_empty": 1,
    "fieldname": "especificaciones_de_hilo",
@@ -132,7 +140,6 @@
    "options": "Tipo proceso"
   },
   {
-   "fetch_if_empty": 1,
    "fieldname": "espesor_de_material_base_section",
    "fieldtype": "Section Break",
    "label": "Espesor de material base"
@@ -158,6 +165,7 @@
   },
   {
    "fetch_from": "procedimiento.rango_de_espesor",
+   "fetch_if_empty": 1,
    "fieldname": "rango_de_espesor",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -177,11 +185,54 @@
    "hidden": 1,
    "label": "Serie de nombres",
    "options": "procedimiento.-.#"
+  },
+  {
+   "depends_on": "eval:doc.tipo_proceso && doc.tipo_proceso.toString().startsWith(\"14\")",
+   "fetch_from": "procedimiento.especificaciones_de_electrodo_no_consumible",
+   "fetch_if_empty": 1,
+   "fieldname": "especificaciones_de_electrodo_no_consumible",
+   "fieldtype": "Data",
+   "label": "Especificaciones de Electrodo no Consumible"
+  },
+  {
+   "fieldname": "espesor_de_prueba_de_cup\u00f3n_section",
+   "fieldtype": "Section Break",
+   "label": "Espesor de prueba de cup\u00f3n"
+  },
+  {
+   "fetch_from": "procedimiento.prueba_de_cup\u00f3n_espesor_m\u00ednimo",
+   "fetch_if_empty": 1,
+   "fieldname": "prueba_de_cup\u00f3n_espesor_m\u00ednimo",
+   "fieldtype": "Int",
+   "label": "Prueba de Cup\u00f3n Espesor M\u00ednimo"
+  },
+  {
+   "fetch_from": "procedimiento.prueba_de_cup\u00f3n_espesor_m\u00e1ximo",
+   "fetch_if_empty": 1,
+   "fieldname": "prueba_de_cup\u00f3n_espesor_m\u00e1ximo",
+   "fieldtype": "Int",
+   "label": "Prueba de Cup\u00f3n Espesor M\u00e1ximo"
+  },
+  {
+   "fetch_from": "procedimiento.rango_de_espesor_de_prueba_de_cup\u00f3n",
+   "fetch_if_empty": 1,
+   "fieldname": "rango_de_espesor_de_prueba_de_cup\u00f3n",
+   "fieldtype": "Data",
+   "label": "Rango de Espesor de Prueba de Cup\u00f3n",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "procedimiento.material_de_relleno",
+   "fetch_if_empty": 1,
+   "fieldname": "material_de_relleno",
+   "fieldtype": "Link",
+   "label": "Material de Relleno",
+   "options": "Material de Relleno"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-28 07:50:40.023795",
+ "modified": "2025-02-03 08:24:47.237221",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "WPS",

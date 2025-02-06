@@ -2,51 +2,46 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:nombre",
- "creation": "2025-01-09 10:28:29.438934",
+ "creation": "2025-02-03 05:55:51.776676",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "nombre",
-  "grupo_de_material",
+  "composici\u00f3n",
   "descripcion",
-  "especificaciones_tecnicas"
+  "notas_adiciales"
  ],
  "fields": [
   {
    "fieldname": "nombre",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Nombre",
-   "reqd": 1,
    "unique": 1
   },
   {
-   "fieldname": "grupo_de_material",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Grupo de material",
-   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11"
+   "fieldname": "composici\u00f3n",
+   "fieldtype": "Data",
+   "label": "Composici\u00f3n"
   },
   {
    "fieldname": "descripcion",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Descripcion"
   },
   {
-   "fieldname": "especificaciones_tecnicas",
+   "fieldname": "notas_adiciales",
    "fieldtype": "Data",
-   "label": "Especificaciones tecnicas"
+   "label": "Notas adiciales"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-03 06:26:43.654040",
+ "modified": "2025-02-03 05:55:51.776676",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
- "name": "Material base",
+ "name": "Gas de Respaldo",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

@@ -64,7 +64,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Maestras",
-   "link_count": 2,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -88,9 +88,59 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gas de Proteccion",
+   "link_count": 0,
+   "link_to": "Gas de Proteccion",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gas de Respaldo",
+   "link_count": 0,
+   "link_to": "Gas de Respaldo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tipo de producto",
+   "link_count": 0,
+   "link_to": "Tipo de producto",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tipo proceso",
+   "link_count": 0,
+   "link_to": "Tipo proceso",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tipo de union",
+   "link_count": 0,
+   "link_to": "Tipo de union",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-01-28 06:37:08.710145",
+ "modified": "2025-02-03 08:36:12.716426",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Frappe Welding",

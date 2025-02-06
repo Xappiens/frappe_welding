@@ -33,24 +33,28 @@ class Homologarsoldador(Document):
 
 
 
-
-# def check_certification_expiry():
-#     # Get all HomologarSoldador records
-#     homologar_soldador_records = frappe.get_all("Homologar soldador", fields=["name", "fecha_de_certificación", "fecha_de_vencimiento_de_la_certificación", "estado"])
+@frappe.whitelist()
+def check_certification_expiry():
+    # Get all HomologarSoldador records
+    homologar_soldador_records = frappe.get_all("Homologar soldador", fields=["name", "fecha_de_certificación", "fecha_de_vencimiento_de_la_certificación", "estado"])
     
-#     for record in homologar_soldador_records:
-#         fecha_de_certificacion = getdate(record.fecha_de_certificación)
-#         fecha_de_vencimiento = getdate(record.fecha_de_vencimiento_de_la_certificación)
+    for record in homologar_soldador_records:
+        fecha_de_certificacion = getdate(record.fecha_de_certificación)
+        fecha_de_vencimiento = getdate(record.fecha_de_vencimiento_de_la_certificación)
         
-#         # Get today's date
-#         today = getdate(nowdate())
+        # Get today's date
+        today = getdate(nowdate())
+        print("Fecha de", today , fecha_de_certificacion,fecha_de_vencimiento, today < fecha_de_certificacion , today > fecha_de_vencimiento)
+        # Check if today's date is outside the certification range
+        if today < fecha_de_certificacion or today > fecha_de_vencimiento:
+            # Update the status to "Expired" if the current date is not within the range
+            if record.estado != "Vencido":  # Only update if the status is not already "Expired"
+                frappe.db.set_value("Homologar soldador", record.name, "estado", "Vencido")
+                frappe.log_error(f"Certification expired for {record.name}", "Certification Expiry")
+        else:
+            if record.estado != "Activo":  # Only update if the status is not already "Active"
+                frappe.db.set_value("Homologar soldador", record.name, "estado", "Activo")
         
-#         # Check if today's date is outside the certification range
-#         if today < fecha_de_certificacion or today > fecha_de_vencimiento:
-#             # Update the status to "Expired" if the current date is not within the range
-#             if record.estado != "Vencido":  # Only update if the status is not already "Expired"
-#                 frappe.db.set_value("Homologar soldador", record.name, "estado", "Vencido")
-#         else:
-#             frappe.db.set_value("Homologar soldador", record.name, "estado", "Vencido")
-#         frappe.db.commit() 
-#     frappe.log_error(f"Certification expired for {record.name}", "Certification Expiry")
+        
+    frappe.db.commit()  # Commit the changes after the loop
+

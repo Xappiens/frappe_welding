@@ -16,31 +16,26 @@
   "soldador",
   "status",
   "detalles_de_calificaci\u00f3n_section",
-  "tipo_de_proceso",
+  "tipo_proceso",
+  "especificaciones_de_electrodo",
+  "especificaciones_de_hilo",
+  "especificaciones_de_electrodo_no_consumible",
   "tipo_de_producto",
   "material_base",
   "material_de_relleno",
   "espesor_de_material_base",
   "grado_de_mecanizacion",
   "posiciones_de_soldadura",
-  "tipo_de_union",
   "column_break_i8wlt",
+  "tipo_de_union",
   "tipo_de_corriente",
   "tratamiento_termico",
   "descripci\u00f3n_del_tratamiento_t\u00e9rmico",
   "modo_de_transferencia",
   "gas_de_proteccion",
-  "gas_de_respaldo",
-  "especificaciones_de_electrodo",
-  "especificaciones_de_hilo"
+  "gas_de_respaldo"
  ],
  "fields": [
-  {
-   "fieldname": "tipo_de_proceso",
-   "fieldtype": "Link",
-   "label": "Tipo de proceso",
-   "options": "Tipo proceso"
-  },
   {
    "fieldname": "tipo_de_producto",
    "fieldtype": "Link",
@@ -90,24 +85,28 @@
    "fieldname": "modo_de_transferencia",
    "fieldtype": "Select",
    "label": "Modo de transferencia",
-   "options": "Cortocircuito\nPulsado\nPulverizar\nGlobulares."
+   "options": "Cortocircuito\nGlobular\nPulsado\nSpray"
   },
   {
    "fieldname": "gas_de_proteccion",
-   "fieldtype": "Data",
-   "label": "Gas de proteccion"
+   "fieldtype": "Link",
+   "label": "Gas de proteccion",
+   "options": "Gas de Proteccion"
   },
   {
    "fieldname": "gas_de_respaldo",
-   "fieldtype": "Data",
-   "label": "Gas de respaldo"
+   "fieldtype": "Link",
+   "label": "Gas de respaldo",
+   "options": "Gas de Respaldo"
   },
   {
+   "depends_on": "eval:doc.tipo_proceso == \"111\";",
    "fieldname": "especificaciones_de_electrodo",
    "fieldtype": "Data",
    "label": "Especificaciones de electrodo"
   },
   {
+   "depends_on": "eval:doc.tipo_proceso && doc.tipo_proceso.toString().startsWith(\"13\")",
    "fieldname": "especificaciones_de_hilo",
    "fieldtype": "Data",
    "label": "Especificaciones de hilo"
@@ -184,11 +183,23 @@
    "hidden": 1,
    "label": "Serie de nombres",
    "options": "WPQ-.YYYY.-.MM.-.####"
+  },
+  {
+   "depends_on": "eval:doc.tipo_proceso && doc.tipo_proceso.toString().startsWith(\"14\")\n",
+   "fieldname": "especificaciones_de_electrodo_no_consumible",
+   "fieldtype": "Data",
+   "label": "Especificaciones de Electrodo no Consumible"
+  },
+  {
+   "fieldname": "tipo_proceso",
+   "fieldtype": "Link",
+   "label": "Tipo Proceso",
+   "options": "Tipo proceso"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-28 07:50:56.518260",
+ "modified": "2025-02-03 06:18:37.718502",
  "modified_by": "Administrator",
  "module": "Frappe Welding",
  "name": "Cualificacion WPQ",
